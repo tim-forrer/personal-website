@@ -1,4 +1,5 @@
 import { Container, Group, Image, Title, Text, Stack } from '@mantine/core';
+import { Outfit } from 'next/font/google'
 import Link from 'next/link';
 import classes from './Header.module.css';
 
@@ -6,6 +7,8 @@ const links = [
     { link: '/projects', label: 'Projects' },
     { link: '/gallery', label: 'Gallery' },
 ];
+
+const outfit = Outfit({ subsets: ['latin'] })
 
 export function Header() {
     const items = links.map((link) => (
@@ -25,7 +28,7 @@ export function Header() {
                     <Group>
                         <Image src="/icon.svg" h={45} w={45} />
                         <Stack gap={0}>
-                            <Title order={2}>Tim Forrer</Title>
+                            <Title order={2} className={outfit.className}>Tim Forrer</Title>
                             <Text size='sm'>Doctoral Student @ UTokyo</Text>
                         </Stack>
                     </Group>
