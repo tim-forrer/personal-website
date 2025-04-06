@@ -1,14 +1,11 @@
 import { Group, Image, Title, Text, Stack } from '@mantine/core';
 import Link from 'next/link';
 import classes from './Header.module.css';
-import { ollama } from 'ollama-ai-provider';
 
 const links = [
     { link: '/projects', label: 'Projects' },
     { link: '/gallery', label: 'Gallery' },
 ];
-
-const model = ollama('gemma3:4b')
 
 export function Header() {
     const items = links.map((link) => (
