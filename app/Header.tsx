@@ -23,7 +23,7 @@ export function Header() {
 
     return (
         <header className={classes.header}>
-            <Container size="md" className={classes.inner}>
+            <Group justify='space-between'>
                 <Link href='/' className={classes.headerlink}>
                     <Group>
                         <Image src="/icon.svg" h={45} w={45} />
@@ -33,10 +33,10 @@ export function Header() {
                         </Stack>
                     </Group>
                 </Link>
-                <Group gap={5}>
+                <Group gap='lg'>
                     {items}
                 </Group>
-            </Container>
+            </Group>
         </header>
     );
 }

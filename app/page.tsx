@@ -1,7 +1,7 @@
 import { Stack, Text } from "@mantine/core";
 import Link from "next/link";
 
-export default function Home() {
+export default function Page() {
   return (
     <Stack>
       <Text size='lg'>
