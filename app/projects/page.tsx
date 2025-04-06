@@ -4,7 +4,7 @@ import { MdConstruction } from "react-icons/md";
 export default function Page() {
     return (
         <Group justify="center">
-            <ThemeIcon size='lg'><MdConstruction /></ThemeIcon>
+            <ThemeIcon size='lg' variant='default'><MdConstruction /></ThemeIcon>
             <Title order={2}>Coming soon...</Title>
         </Group>
     );

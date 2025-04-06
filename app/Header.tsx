@@ -1,14 +1,14 @@
-import { Container, Group, Image, Title, Text, Stack } from '@mantine/core';
-import { Outfit } from 'next/font/google'
+import { Group, Image, Title, Text, Stack } from '@mantine/core';
 import Link from 'next/link';
 import classes from './Header.module.css';
+import { ollama } from 'ollama-ai-provider';
 
 const links = [
     { link: '/projects', label: 'Projects' },
     { link: '/gallery', label: 'Gallery' },
 ];
 
-const outfit = Outfit({ subsets: ['latin'] })
+const model = ollama('gemma3:4b')
 
 export function Header() {
     const items = links.map((link) => (
@@ -28,7 +28,7 @@ export function Header() {
                     <Group>
                         <Image src="/icon.svg" h={45} w={45} />
                         <Stack gap={0}>
-                            <Title order={2} className={outfit.className}>Tim Forrer</Title>
+                            <Title order={2}>Tim Forrer</Title>
                             <Text size='sm'>Doctoral Student @ UTokyo</Text>
                         </Stack>
                     </Group>

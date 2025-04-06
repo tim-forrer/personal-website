@@ -1,14 +1,28 @@
 import '@mantine/core/styles.css';
 import './globals.css'
+import { Outfit } from 'next/font/google'
 import Head from 'next/head';
 import { Header } from './Header';
 
-import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider, createTheme, mantineHtmlProps } from '@mantine/core';
 
 export const metadata = {
   title: 'Tim Forrer',
   description: 'Personal website of Tim Forrer',
 };
+
+// Initialize the Outfit font for headings only
+const outfit = Outfit({
+  subsets: ['latin'],
+  // variable: '--font-outfit', // Creates a CSS variable you can reference
+});
+
+const theme = createTheme({
+  fontFamily: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji',
+  headings: {
+    fontFamily: 'Outfit, sans-serif',
+  }
+})
 
 export default function RootLayout({
   children,
@@ -26,8 +40,8 @@ export default function RootLayout({
         <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
         <ColorSchemeScript />
       </Head>
-      <body>
-        <MantineProvider>
+      <body className={outfit.className}>
+        <MantineProvider theme={theme}>
           <Header />
           {children}
         </MantineProvider>
