@@ -21,15 +21,18 @@ export function Header() {
     return (
         <header className={classes.header}>
             <Group justify='space-between'>
-                <Link href='/' className={classes.headerlink}>
-                    <Group>
-                        <Image src="/icon.svg" h={45} w={45} />
-                        <Stack gap={0}>
-                            <Title order={2}>Tim Forrer</Title>
-                            <Text size='sm'>Doctoral Student @ UTokyo</Text>
-                        </Stack>
-                    </Group>
-                </Link>
+                <Group className={classes.plain}>
+                    <Link href='/'>
+                        <Group>
+                            <Image src="/icon.svg" h={45} w={45} />
+                            <Stack gap={0}>
+                                <Title order={2}>Tim Forrer</Title>
+                                <Text size='sm'>Doctoral Student @ UTokyo</Text>
+                            </Stack>
+                        </Group>
+                    </Link>
+                </Group>
+
                 <Group gap='lg'>
                     {items}
                 </Group>

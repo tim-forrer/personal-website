@@ -4,14 +4,7 @@
     border-bottom: 3px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
 }
 
-.headerlink {
-    all: unset; /* Resets all inherited and default styles */
-    cursor: pointer; /* Adds a pointer cursor for interactivity */
-    text-decoration: none; /* Ensures no underline */
-    color: inherit; /* Inherits the text color from the parent */
-}
-
-.headerlink:hover {
+.plain a {
     all: unset; /* Resets all inherited and default styles */
     cursor: pointer; /* Adds a pointer cursor for interactivity */
     text-decoration: none; /* Ensures no underline */
