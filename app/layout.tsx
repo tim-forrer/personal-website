@@ -4,7 +4,7 @@ import { Outfit } from 'next/font/google'
 import Head from 'next/head';
 import { Header } from './Header';
 
-import { ColorSchemeScript, MantineProvider, createTheme, mantineHtmlProps } from '@mantine/core';
+import { ColorSchemeScript, MantineProvider, createTheme, mantineHtmlProps, Center } from '@mantine/core';
 
 export const metadata = {
   title: 'Tim Forrer',
@@ -43,7 +43,9 @@ export default function RootLayout({
       <body className={outfit.className}>
         <MantineProvider theme={theme}>
           <Header />
-          {children}
+          <Center>
+            {children}
+          </Center>
         </MantineProvider>
       </body>
     </html>
