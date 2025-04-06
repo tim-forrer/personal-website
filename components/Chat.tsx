@@ -2,23 +2,24 @@
 
 import React from 'react';
 import { useChat } from '@ai-sdk/react';
-import { Paper, Input, Stack, ScrollArea, Group, Text } from '@mantine/core';
+import { Paper, Input, Stack, ScrollArea, Group } from '@mantine/core';
 import { MemoizedMarkdown } from './MemoizedMarkdown';
 import { UIMessage } from 'ai';
+import styles from './Chat.module.css'
 
 function formatMessage(message: UIMessage): React.JSX.Element {
     switch (message.role) {
         case 'user':
             return (
-                <Group justify='right' key={message.id}>
-                    <Paper withBorder p='xs' bg='gray.2' maw='90%'>
+                <Group justify='right' key={message.id} className={styles.group}>
+                    <Paper withBorder p='xs' shadow='sm' bg='gray.2' maw='90%'>
                         <MemoizedMarkdown id={message.id} content={message.content} />
                     </Paper>
                 </Group>
             );
         default:
             return (
-                <Group key={message.id}>
+                <Group key={message.id} className={styles.group}>
                     {message.parts.map((part, i) => {
                         switch (part.type) {
                             case 'text':
@@ -40,12 +41,12 @@ export default function Chat(): React.JSX.Element {
                 </ScrollArea>
 
                 <form onSubmit={handleSubmit}>
-                    <Group justify='right'>
+                    <Group>
                         <Input
                             value={input}
                             placeholder="Ask me about Tim!"
                             onChange={handleInputChange}
-                            w="90%"
+                            w='100%'
                         />
                     </Group>
                 </form>
