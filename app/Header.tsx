@@ -23,7 +23,7 @@ export function Header() {
             <Container size="md" className={classes.inner}>
                 <Link href='/' className={classes.headerlink}>
                     <Group>
-                        <Image src="/TF-logo.svg" h={45} w={45} />
+                        <Image src="/icon.svg" h={45} w={45} />
                         <Stack gap={0}>
                             <Title order={2}>Tim Forrer</Title>
                             <Text size='sm'>Doctoral Student @ UTokyo</Text>
